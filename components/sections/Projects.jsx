@@ -86,8 +86,8 @@ function ProjectRow({ project, index, onOpen }) {
           </>
         ) : (
           <>
-            <div>{TextBlock}</div>
-            <div className="overflow-hidden">{ImageBlock}</div>
+            <div className="order-2 md:order-1">{TextBlock}</div>
+            <div className="order-1 md:order-2 overflow-hidden">{ImageBlock}</div>
           </>
         )}
       </div>
