@@ -35,7 +35,7 @@ export default function Navigation() {
         pointerEvents: scrolled ? 'auto' : 'none',
       }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-[#E5E5E5] backdrop-blur-md bg-[#FAFAFA]/80"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-[#D8D2C8] backdrop-blur-md bg-[#EDE8DF]/85"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16 h-16 flex items-center justify-between">
         {/* Logo */}

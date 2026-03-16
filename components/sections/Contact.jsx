@@ -14,7 +14,7 @@ function LinkedInIcon() {
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-[#111111] text-white py-32 px-6 md:px-16">
+    <section id="contact" className="bg-[#111111] text-white py-20 md:py-32 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Main content — centered */}
         <div className="text-center mb-16">

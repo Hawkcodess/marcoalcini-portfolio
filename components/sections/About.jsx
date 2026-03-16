@@ -10,7 +10,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#F5F5F5] py-32 px-6 md:px-16">
+    <section id="about" className="bg-[#E6E0D6] py-20 md:py-32 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-24">
           {/* Left col — 60% */}

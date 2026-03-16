@@ -1,6 +1,5 @@
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
-import CursorDot from '@/components/ui/CursorDot'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -31,8 +30,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="bg-[#FAFAFA] text-[#111111] font-body">
-        <CursorDot />
+      <body className="bg-[#EDE8DF] text-[#111111] font-body">
         {children}
       </body>
     </html>
