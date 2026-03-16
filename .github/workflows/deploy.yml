@@ -9,6 +9,9 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     name: Build and Deploy
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Checkout repository
@@ -26,6 +29,18 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Install OIDC Client
+        run: npm install @actions/core@1.6.0 @actions/http-client
+
+      - name: Get ID Token
+        uses: actions/github-script@v6
+        id: idtoken
+        with:
+          script: |
+            const core = require('@actions/core')
+            return await core.getIDToken()
+          result-encoding: string
+
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -36,3 +51,4 @@ jobs:
           output_location: ''
           api_location: ''
           skip_app_build: true
+          github_id_token: ${{ steps.idtoken.outputs.result }}
