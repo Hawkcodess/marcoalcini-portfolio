@@ -41,7 +41,8 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* Modal Panel */}
           <motion.div
-            className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl p-8 shadow-2xl"
+            className="fixed z-50 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl p-8 shadow-2xl"
+            style={{ top: '50%', left: '50%', x: '-50%', y: '-50%' }}
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}

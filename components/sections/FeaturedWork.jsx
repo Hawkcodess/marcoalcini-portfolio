@@ -34,7 +34,7 @@ function ArrowIcon() {
 
 export default function FeaturedWork() {
   return (
-    <section id="work" className="py-32 px-6 md:px-16">
+    <section id="work" className="py-20 md:py-32 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal>

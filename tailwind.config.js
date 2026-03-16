@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#FAFAFA',
+        background: '#EDE8DF',
         'text-primary': '#111111',
         'text-secondary': '#6B7280',
-        border: '#E5E5E5',
-        accent: '#0A84FF',
+        border: '#D8D2C8',
+        accent: '#FF5500',
       },
       fontFamily: {
         heading: ['var(--font-heading)', 'Georgia', 'serif'],
