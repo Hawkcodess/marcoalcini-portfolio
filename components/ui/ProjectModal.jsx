@@ -11,6 +11,12 @@ function CloseIcon() {
   )
 }
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0 },
+  transition: { delay, duration: 0.45, ease: [0.16, 1, 0.3, 1] },
+})
+
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
     if (!project) return
@@ -59,28 +65,52 @@ export default function ProjectModal({ project, onClose }) {
             </button>
 
             {/* Colored area */}
-            <div className={`relative h-64 rounded-2xl bg-gradient-to-br ${project.color} overflow-hidden mb-6`}>
-              <span
+            <motion.div
+              className={`relative h-64 rounded-2xl bg-gradient-to-br ${project.color} overflow-hidden mb-6`}
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.span
                 className="absolute top-4 right-4 text-[160px] font-bold leading-none select-none pointer-events-none"
                 style={{ color: 'rgba(255,255,255,0.06)' }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 {String(project.id).padStart(2, '0')}
-              </span>
-            </div>
+              </motion.span>
+            </motion.div>
 
-            {/* Content */}
-            <span className="font-body text-xs uppercase tracking-widest text-[#6B7280]">
+            {/* Category */}
+            <motion.span
+              className="font-body text-xs uppercase tracking-widest text-[#6B7280]"
+              {...fadeUp(0.2)}
+            >
               {project.category}
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-light text-[#111111] mt-1 mb-4">
+            </motion.span>
+
+            {/* Title */}
+            <motion.h2
+              className="font-heading text-3xl md:text-4xl font-light text-[#111111] mt-1 mb-4"
+              {...fadeUp(0.25)}
+            >
               {project.title}
-            </h2>
-            <p className="font-body text-base text-[#6B7280] leading-relaxed mb-6">
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              className="font-body text-base text-[#6B7280] leading-relaxed mb-6"
+              {...fadeUp(0.3)}
+            >
               {project.description}
-            </p>
+            </motion.p>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            <motion.div
+              className="flex flex-wrap gap-2 mb-4"
+              {...fadeUp(0.35)}
+            >
               {project.tags.map((tag) => (
                 <span
                   key={tag}
@@ -89,10 +119,15 @@ export default function ProjectModal({ project, onClose }) {
                   {tag}
                 </span>
               ))}
-            </div>
+            </motion.div>
 
             {/* Year */}
-            <span className="font-body text-xs text-[#6B7280]/60">{project.year}</span>
+            <motion.span
+              className="font-body text-xs text-[#6B7280]/60"
+              {...fadeUp(0.4)}
+            >
+              {project.year}
+            </motion.span>
           </motion.div>
         </>
       )}
