@@ -106,7 +106,7 @@ export default function Hero() {
     <section
       id="home"
       className="relative bg-[#EDE8DF] flex flex-col justify-between overflow-hidden select-none"
-      style={{ height: '100dvh', paddingTop: '1.75rem', paddingBottom: '1.75rem' }}
+      style={{ minHeight: '100dvh', paddingTop: '1.75rem', paddingBottom: '1.75rem' }}
     >
       {/* ── Top bar ── */}
       <motion.div
